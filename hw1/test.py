@@ -31,16 +31,6 @@ def read_test_data(filename, N):
     print('Shape of test X:', test_X.shape)
     return test_X
 
-def normal(test_X):
-    ##### normalize both train ans test data (with same mu ans sig)
-    mu = np.loadtxt('normal_mu.txt')
-    sig = np.loadtxt('normal_sig.txt')
-    print(mu)
-    for i in range(test_X.shape[1]-1):
-        test_X[:, i] = (test_X[:, i] - mu[i]) / sig[i]
-        test_X[:, i] = (test_X[:, i] - mu[i]) / sig[i]
-    return test_X
-
 if __name__ == '__main__':
     ##### file name
     infile = sys.argv[1]
@@ -48,7 +38,7 @@ if __name__ == '__main__':
     ##### read data
     test_X = read_test_data(infile, N = 9)
     ##### load model
-    c = np.load('model21.npy')
+    c = np.load('model.npy')
     ##### calculate test_Y
     test_Y = np.dot(test_X, c)
     ##### write test_Y
