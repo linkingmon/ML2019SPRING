@@ -23,7 +23,8 @@ path = sys.argv[1]
 files = []
 for r, d, f in os.walk(path):
     for file in f:
-        files.append('/' + file)
+        if(file[3:7] == '.png'):
+            files.append('/' + file)
 files.sort()
 
 import os
@@ -60,8 +61,6 @@ def ifgsm(num, file, epochs, epsilon):
     return res, img
 
 for num, file in enumerate(files):
-    if num != 121 and num != 0 and num != 198 and:
-        continue
     res, img = ifgsm(num = num, file = file, epochs = 5, epsilon = 0.0025)
     if res == [False]:
         # print("     TRY 1")

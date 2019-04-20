@@ -25,7 +25,8 @@ path = sys.argv[1]
 files = []
 for r, d, f in os.walk(path):
     for file in f:
-        files.append('/' + file)
+        if(file[3:7] == '.png'):
+            files.append('/' + file)
 files.sort()
 
 import os
