@@ -36,7 +36,7 @@ for r, d, f in os.walk(path):
     for file in f:
         files.append(file)
 files.sort()
-newdirs = ['res50/']
+newdirs = ['vgg16/','vgg19/','res101/','d121/','d169/']
 
 for newdir in newdirs:
     acc = infnorm = 0
